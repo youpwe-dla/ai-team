@@ -69,7 +69,7 @@ my money leaks.
 
 ## 5. CMO
 
-**Mission:** Plan marketing for my accounting (EA) practice: who to reach, what to say, where and when.
+**Mission:** Plan marketing for my consulting business: who to reach, what to say, where and when.
 
 | | |
 |---|---|
@@ -78,7 +78,7 @@ my money leaks.
 | Tools | None in v1 (planning only) |
 | Model | cloud |
 | Approval | None (it only plans) |
-| Done when (v1) | A 4-week content calendar I would actually post from, built from my proposal's services |
+| Done when (v1) | A 4-week content calendar I would actually post from, built from my consulting services |
 
 ## 6. Advertiser
 
@@ -104,7 +104,7 @@ my money leaks.
 | Tools | HTML template; HTML validator; approval queue |
 | Model | cloud (copy), template (layout) |
 | Approval | **Yes**, before publishing anywhere |
-| Done when (v1) | Builds a landing page for the practice that passes validation and looks right on a phone |
+| Done when (v1) | Builds a landing page for the consulting business that passes validation and looks right on a phone |
 
 ## 8. Video Editor
 
@@ -125,5 +125,5 @@ my money leaks.
 
 - Posting to social media or ad platforms (behind approval)
 - Sending email; calendar booking
-- Client-facing agents for the practice (needs a privacy review first)
+- Client-facing agents for the consulting business (needs a privacy review first)
 - Voice interface
