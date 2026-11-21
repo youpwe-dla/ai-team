@@ -2,7 +2,7 @@
 
 **Author:** Manny Bate · [github.com/youpwe-dla](https://github.com/youpwe-dla)
 
-A personal team of 8 AI agents that run my day, my job search and the marketing for my accounting
+A personal team of 8 AI agents that run my day, my job search and the marketing for my consulting
 practice. One Assistant takes every request and hands it to the right specialist. Everything runs on
 my own hardware with a local model; a cloud model is used only for harder reasoning.
 
