@@ -6,7 +6,7 @@ A personal team of 8 AI agents that run my day, my job search and the marketing 
 practice. One Assistant takes every request and hands it to the right specialist. Everything runs on
 my own hardware with a local model; a cloud model is used only for harder reasoning.
 
-**Status:** Day 1 of 18 (target: Dec 8, 2026). See the [build log](docs/build-log.md).
+**Status:** Day 2 of 18 (target: Dec 8, 2026). See the [build log](docs/build-log.md).
 
 ## The team
 
@@ -33,7 +33,7 @@ Full job descriptions: [docs/agents.md](docs/agents.md).
 
 ## Stack (planned)
 
-Python 3.12 · PydanticAI · Ollama (`llama3.2:3b`, local) · Claude (cloud, optional) · SQLite ·
+Python 3.12 · PydanticAI · Ollama (`qwen3:8b` default, `llama3.2:3b` fast, `deepseek-r1:8b` reasoning) · Claude (cloud, optional) · SQLite ·
 FastAPI · Whisper + ffmpeg · Docker · GitHub Actions · Argo CD on a k3s homelab cluster.
 
 ## Repository layout
@@ -42,5 +42,23 @@ FastAPI · Whisper + ffmpeg · Docker · GitHub Actions · Argo CD on a k3s home
 docs/
   agents.md        job description for each agent (the spec)
   build-log.md     dated log of every session, problem and fix
-agents/            one module per agent (from Day 3)
+src/ai_team/
+  settings.py      config from .env
+  models.py        Task, Business (budget / consulting / personal), Sensitivity, Tier
+  llm.py           picks the model; client data always stays local
+  agents/          one module per agent (echo.py = Day 2 test agent)
+  cli.py           `ai-team check`, `ai-team ask "..."`
+tests/             privacy-rule and agent tests (run in CI)
+```
+
+## Quick start (Windows PowerShell)
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -e ".[dev]"
+Copy-Item .env.example .env
+ai-team check
+ai-team ask "Draft a one-line pitch for AI consulting" --business consulting
+pytest -q
 ```

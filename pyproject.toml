@@ -1,0 +1,33 @@
+[project]
+name = "ai-team"
+version = "0.1.0"
+description = "A personal team of AI agents for my day, my job search and my two businesses"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic-ai-slim[openai]>=1.0",
+    "pydantic-settings>=2.4",
+]
+
+[project.optional-dependencies]
+claude = ["pydantic-ai-slim[anthropic]>=1.0"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+ai-team = "ai_team.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
