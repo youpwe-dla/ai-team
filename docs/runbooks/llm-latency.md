@@ -111,6 +111,11 @@ How to read it:
    API; the `/no_think` prompt switch and the `think` field were silently ignored. 13x faster.
 2. **H1, partial CPU offload:** qwen3:8b runs 27% on the CPU, so it stays slower than qwen3:4b.
 
+**After the fix, 30 cases:** qwen3:4b 1.9 s median (90% accurate); qwen3:8b 6.2 s median
+(100% accurate). Down from 31 s median: **5x faster for the 8B, with better accuracy**. The
+remaining 8B gap vs the 4B is H1 (27% on the CPU); next experiment: `num_ctx` 2048 and
+`OLLAMA_KV_CACHE_TYPE=q8_0` to fit it fully on the GPU.
+
 **Lesson about metrics:** the library reported `reasoning_tokens: 0` on every run, including
 the slow ones; the reasoning was counted in `output_tokens`. Cross-check one metric against
 another before trusting it.
@@ -135,7 +140,7 @@ does both, before spending money on hardware.
 | Change one thing, re-measure | Controlled experiments; never tune two knobs at once |
 
 **The interview story:** "The router was 5-10x slower than a bandwidth estimate
-predicted. I broke one request into load, prefill and decode, found [result], fixed
-it with [fix], and cut median latency from 31 s to [X] s. The first fix I tried
+predicted. I broke one request into load, prefill and decode, found two stacked causes (hidden reasoning tokens and a model spilling onto the CPU), fixed
+the first with one API setting, and cut median latency from 31 s to 6 s (and 2 s on a smaller model) while accuracy went up. The first fix I tried
 (turning off reasoning) didn't move latency at all, which is why I measure before
 changing things."

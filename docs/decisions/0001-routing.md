@@ -1,6 +1,6 @@
 # 0001: How requests reach the right agent
 
-**Status:** proposed (Day 3). Finalised on Day 4 after the two-model comparison.
+**Status:** accepted (2026-11-26). Router model: `qwen3:8b` with `reasoning_effort: none`.
 **Date:** 2026-11-26
 
 ## Context
@@ -42,6 +42,13 @@ My own requests get added as they come in.
 | 2026-11-26 | llama3.2:3b | 73.3% | 55.6% | 1.6 s |
 | 2026-11-26 | qwen3:4b (thinking still on) | 93.3% | 88.9% | 55 s |
 | 2026-11-26 | qwen3:4b, reasoning_effort none, 5 cases | 100% | 100% | 1.7 s |
+| 2026-11-26 | **qwen3:4b, reasoning_effort none, 30 cases** | 90.0% (business 66.7%) | 88.9% | 1.9 s median |
+| 2026-11-26 | **qwen3:8b, reasoning_effort none, 30 cases** | **100% (business 96.7%)** | **100%** | 6.2 s median |
+
+**Model choice.** Rule set before the runs: take the faster model unless the other is more
+than 5 points more accurate. qwen3:8b is 10 points ahead on agent and 30 on business, and
+6.2 s is under the 8 s revisit line, so qwen3:8b routes. `@agent` is the fast path. Optional
+next step: cut qwen3:8b's CPU offload (smaller context, quantized KV cache) to reach ~3-4 s.
 
 Findings so far:
 - qwen3:8b runs 27% on the CPU (doesn't fit in 6 GB): that's the latency. See `docs/runbooks/llm-latency.md`.
