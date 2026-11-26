@@ -6,7 +6,7 @@ A personal team of 8 AI agents that run my day, my job search and the marketing 
 practice. One Assistant takes every request and hands it to the right specialist. Everything runs on
 my own hardware with a local model; a cloud model is used only for harder reasoning.
 
-**Status:** Day 2 of 18 (target: Dec 8, 2026). See the [build log](docs/build-log.md).
+**Status:** Day 3 of 18 (target: Dec 8, 2026). See the [build log](docs/build-log.md).
 
 ## The team
 
@@ -46,8 +46,13 @@ src/ai_team/
   settings.py      config from .env
   models.py        Task, Business (budget / consulting / personal), Sensitivity, Tier
   llm.py           picks the model; client data always stays local
-  agents/          one module per agent (echo.py = Day 2 test agent)
-  cli.py           `ai-team check`, `ai-team ask "..."`
+  router.py        picks one of the 8 agents, or asks when unsure
+  agents/          registry (who handles what), stubs, one module per agent as built
+  prompts/         each agent's instructions
+  eval_routing.py  scores the router against eval/routing_cases.jsonl
+  cli.py           `ai-team check | ask | route | eval`
+eval/              labeled test requests and saved results
+docs/decisions/    one record per design decision
 tests/             privacy-rule and agent tests (run in CI)
 ```
 
@@ -59,6 +64,8 @@ py -3.12 -m venv .venv
 pip install -e ".[dev]"
 Copy-Item .env.example .env
 ai-team check
-ai-team ask "Draft a one-line pitch for AI consulting" --business consulting
+ai-team ask "what should i work on first"
+ai-team ask "@money is a 7020 for 250 a good deal"   # skip the router
+ai-team eval                                     # score the router
 pytest -q
 ```

@@ -58,3 +58,9 @@ def pick_model(task: Task, settings: Settings | None = None) -> Model:
 
 def describe(model: Model) -> str:
     return f"{model.system}:{model.model_name}"
+
+
+def local_model(name: str, settings: Settings | None = None) -> Model:
+    """A specific local model by name, e.g. for comparing models in an eval."""
+    settings = settings or get_settings()
+    return OpenAIChatModel(name, provider=OllamaProvider(base_url=settings.ollama_base_url))

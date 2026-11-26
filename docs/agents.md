@@ -1,5 +1,7 @@
 # Agent job descriptions (v1 spec)
 
+> Each agent's working instructions live in `src/ai_team/prompts/<agent>.md`, and what the router reads about each agent is in `src/ai_team/agents/registry.py`. The descriptions below are the original Day 1 spec.
+
 **Author:** Manny Bate · Drafted Day 1 (2026-11-21). Edit freely: this file is the contract each agent is built
 and tested against.
 

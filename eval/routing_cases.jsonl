@@ -1,0 +1,30 @@
+{"id": 1, "request": "what do i need to reply to today", "agent": "assistant", "business": "personal", "sensitivity": "private", "hard": false}
+{"id": 2, "request": "draft a reply to the recruiter who msged me about the HPC role, say im free thurs or fri", "agent": "assistant", "business": "personal", "sensitivity": "private", "hard": false}
+{"id": 3, "request": "block out my day tmrw, i got the ai team build, gym and a call at 2", "agent": "assistant", "business": "personal", "sensitivity": "private", "hard": true}
+{"id": 4, "request": "who have i not followed up with this week", "agent": "assistant", "business": "personal", "sensitivity": "private", "hard": false}
+{"id": 5, "request": "i have like 12 things open, what should i actually work on first", "agent": "prioritizer", "business": "personal", "sensitivity": "private", "hard": false}
+{"id": 6, "request": "rank these: linkedin rewrite, push incident repo, fix resume gaps, reply sellers", "agent": "prioritizer", "business": "personal", "sensitivity": "private", "hard": false}
+{"id": 7, "request": "what can i drop this week, im overloaded", "agent": "prioritizer", "business": "personal", "sensitivity": "private", "hard": true}
+{"id": 8, "request": "plan my week around landing an FDE role", "agent": "strategist", "business": "personal", "sensitivity": "private", "hard": true}
+{"id": 9, "request": "is a optiplex 7020 for 250 a good deal or should i wait", "agent": "money_saver", "business": "personal", "sensitivity": "public", "hard": false}
+{"id": 10, "request": "go thru my subscriptions and tell me what to cancel", "agent": "money_saver", "business": "personal", "sensitivity": "private", "hard": false}
+{"id": 11, "request": "cheaper alternative to adobe premiere thats free", "agent": "money_saver", "business": "personal", "sensitivity": "public", "hard": true}
+{"id": 12, "request": "watch for a tp-link ax73 under 55 bucks", "agent": "money_saver", "business": "personal", "sensitivity": "public", "hard": false}
+{"id": 13, "request": "who would actually pay for ai consulting from me, small biz or mid size?", "agent": "strategist", "business": "consulting", "sensitivity": "private", "hard": false}
+{"id": 14, "request": "poke holes in my plan to launch the consulting biz in january", "agent": "strategist", "business": "consulting", "sensitivity": "private", "hard": false}
+{"id": 15, "request": "smallest offer i could sell to prove ppl want budget coaching", "agent": "strategist", "business": "budget", "sensitivity": "private", "hard": false}
+{"id": 16, "request": "job search strategy for applied ai roles in dfw", "agent": "strategist", "business": "personal", "sensitivity": "private", "hard": false}
+{"id": 17, "request": "my linkedin headline sucks, rewrite it for ai consulting", "agent": "cmo", "business": "consulting", "sensitivity": "public", "hard": true}
+{"id": 18, "request": "30 day content plan for the consulting business", "agent": "cmo", "business": "consulting", "sensitivity": "public", "hard": false}
+{"id": 19, "request": "how do i position myself different from other ai consultants", "agent": "cmo", "business": "consulting", "sensitivity": "public", "hard": true}
+{"id": 20, "request": "marketing ideas for the budget coaching thing, caleb hammer style on tiktok", "agent": "cmo", "business": "budget", "sensitivity": "public", "hard": false}
+{"id": 21, "request": "write 3 facebook ad headlines for a free ai audit offer", "agent": "advertiser", "business": "consulting", "sensitivity": "public", "hard": false}
+{"id": 22, "request": "i got $200 a month for ads, google or linkedin?", "agent": "advertiser", "business": "consulting", "sensitivity": "public", "hard": true}
+{"id": 23, "request": "when should i kill an ad thats not getting leads", "agent": "advertiser", "business": "consulting", "sensitivity": "public", "hard": false}
+{"id": 24, "request": "need a one page site for the consulting biz", "agent": "web_builder", "business": "consulting", "sensitivity": "public", "hard": false}
+{"id": 25, "request": "whats the cheapest way to host a landing page with a contact form", "agent": "web_builder", "business": "consulting", "sensitivity": "public", "hard": true}
+{"id": 26, "request": "what pages should a budget coaching website have", "agent": "web_builder", "business": "budget", "sensitivity": "public", "hard": false}
+{"id": 27, "request": "cut my 20 min homelab recording into short clips with captions", "agent": "video_editor", "business": "personal", "sensitivity": "private", "hard": false}
+{"id": 28, "request": "script outline for a youtube vid on jensen huang", "agent": "video_editor", "business": "personal", "sensitivity": "public", "hard": false}
+{"id": 29, "request": "make a demo video of the ai team for linkedin", "agent": "video_editor", "business": "personal", "sensitivity": "public", "hard": true}
+{"id": 30, "request": "hook for the first 5 secs of my consulting intro video", "agent": "video_editor", "business": "consulting", "sensitivity": "public", "hard": false}
